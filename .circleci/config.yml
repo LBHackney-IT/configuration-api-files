@@ -95,31 +95,52 @@ jobs:
                   aws-account: $AWS_ACCOUNT_PRODUCTION
 workflows:
     version: 2
-    continuous-delivery-development:
+    continuous-delivery:
         jobs:                   
             - assume-role-development:
                   context: api-assume-role-housing-development-context
+                  filters:
+                    branches:
+                      only: master
             - build-deploy-development:
                   stage: "development"
                   requires:
                     - assume-role-development
+                  filters:
+                    branches:
+                      only: master                    
             - assume-role-staging:
                   context: api-assume-role-housing-staging-context
                   requires:
                       - build-deploy-development
+                  filters:
+                    branches:
+                      only: release                      
             - build-deploy-staging:
                   stage: "staging"
                   requires:
-                    - assume-role-staging                  
+                    - assume-role-staging
+                  filters:
+                    branches:
+                      only: release                    
             - assume-role-production:
                   context: api-assume-role-housing-production-context
                   requires:
-                    - build-deploy-staging                    
+                    - build-deploy-staging
+                  filters:
+                    branches:
+                      only: release                    
             - permit-deploy-production:
                   type: approval
                   requires:
-                    - assume-role-production                    
+                    - assume-role-production 
+                  filters:
+                    branches:
+                      only: release                    
             - build-deploy-production:
                   stage: "production"
                   requires:
                       - permit-deploy-production
+                  filters:
+                    branches:
+                      only: release                      
