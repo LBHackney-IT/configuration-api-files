@@ -152,14 +152,9 @@ workflows:
     version: 2
     continuous-delivery-development:
         jobs:
-            - install-dependencies
-            - lint-and-test:
-                  requires:
-                      - install-dependencies
+            - install-dependencies            
             - assume-role-development:
                   context: api-assume-role-housing-development-context
-                  requires:
-                      - lint-and-test
                   filters:
                       branches:
                           only: master
