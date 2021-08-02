@@ -14,7 +14,7 @@ references:
 executors:
     node-executor:
         docker:
-            - image: circleci/node:14.15.4-browsers
+            - image: circleci/python:3.10-rc-buster-node-browsers-legacy
     docker-terraform:
         docker:
             - image: "hashicorp/terraform:light"
