@@ -62,7 +62,7 @@ jobs:
             - aws-cli/install            
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp ../development s3://configuration-api-configurations-development/
+                  command: ls
     build-deploy-staging:
         executor: node-executor
         environment:
