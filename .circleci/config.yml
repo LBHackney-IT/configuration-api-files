@@ -14,7 +14,7 @@ references:
 executors:
     node-executor:
         docker:
-            - image: circleci/python:3.10-rc-buster-node-browsers-legacy
+            - image: circleci/python:3.9.6
 
 commands:
     assume-role-and-persist-workspace:
