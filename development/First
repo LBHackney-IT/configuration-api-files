@@ -1,0 +1,1 @@
+{ "Type": "First", "Configuration": { "ApiUrl": "https://first.gov.uk/" }, "FeatureToggles": { "CreatePerson": true, "EditPerson": true } }
