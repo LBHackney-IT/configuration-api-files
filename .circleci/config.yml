@@ -99,16 +99,24 @@ workflows:
                   context: api-assume-role-housing-development-context
             - build-deploy-development:
                   stage: "development"
+                  requires:
+                    - assume-role-development
             - assume-role-staging:
                   context: api-assume-role-housing-staging-context
                   requires:
                       - build-deploy-development
             - build-deploy-staging:
                   stage: "staging"
+                  requires:
+                    - assume-role-staging                  
             - assume-role-production:
                   context: api-assume-role-housing-production-context
+                  requires:
+                    - build-deploy-staging                    
             - permit-deploy-production:
                   type: approval
+                  requires:
+                    - assume-role-production                    
             - build-deploy-production:
                   stage: "production"
                   requires:
