@@ -32,24 +32,7 @@ commands:
                   root: *workspace_root
                   paths:
                       - .aws
-jobs:
-    install-dependencies:
-        executor: node-executor
-        steps:
-            - *attach_workspace
-            - checkout
-            - restore_cache:
-                  key: dependency-cache-{{ checksum "yarn.lock" }}
-            - run:
-                  name: Install dependencies
-                  command: yarn
-            - save_cache:
-                  key: dependency-cache-{{ checksum "yarn.lock" }}
-                  paths:
-                      - ./node_modules
-            - persist_to_workspace:
-                  root: *workspace_root
-                  paths: .    
+jobs: 
     build-deploy-development:
         executor: node-executor
         environment:
@@ -131,6 +114,3 @@ workflows:
                   stage: "production"
                   requires:
                       - permit-deploy-production
-                  filters:
-                      branches:
-                          only: main
