@@ -63,7 +63,7 @@ jobs:
             - aws-cli/install            
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp development s3://configuration-api-configurations-development/
+                  command: aws s3 sync development s3://configuration-api-configurations-development/
     build-deploy-staging:
         executor: node-executor
         environment:
@@ -76,7 +76,7 @@ jobs:
             - aws-cli/install
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp staging s3://configuration-api-configurations-staging/
+                  command: aws s3 sync staging s3://configuration-api-configurations-staging/
     build-deploy-production:
         executor: node-executor
         environment:
@@ -89,7 +89,7 @@ jobs:
             - aws-cli/install
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp production s3://configuration-api-configurations-production/
+                  command: aws s3 sync production s3://configuration-api-configurations-production/
 
     assume-role-development:
         executor: node-executor
