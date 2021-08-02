@@ -59,10 +59,11 @@ jobs:
                 type: string
         steps:
             - *attach_workspace
+            - checkout            
             - aws-cli/install            
             - run:
                   name: Deploy to S3
-                  command: ls
+                  command: aws s3 cp development s3://configuration-api-configurations-development/
     build-deploy-staging:
         executor: node-executor
         environment:
