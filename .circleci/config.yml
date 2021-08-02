@@ -115,32 +115,32 @@ workflows:
                       - build-deploy-development
                   filters:
                     branches:
-                      only: release                      
+                      only: master                      
             - build-deploy-staging:
                   stage: "staging"
                   requires:
                     - assume-role-staging
                   filters:
                     branches:
-                      only: release                    
+                      only: master                    
             - assume-role-production:
                   context: api-assume-role-housing-production-context
                   requires:
                     - build-deploy-staging
                   filters:
                     branches:
-                      only: release                    
+                      only: master                    
             - permit-deploy-production:
                   type: approval
                   requires:
                     - assume-role-production 
                   filters:
                     branches:
-                      only: release                    
+                      only: master                    
             - build-deploy-production:
                   stage: "production"
                   requires:
                       - permit-deploy-production
                   filters:
                     branches:
-                      only: release                      
+                      only: master                      
