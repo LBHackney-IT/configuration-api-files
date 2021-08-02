@@ -72,17 +72,7 @@ jobs:
                       - ./node_modules
             - persist_to_workspace:
                   root: *workspace_root
-                  paths: .
-    lint-and-test:
-        executor: node-executor
-        steps:
-            - *attach_workspace
-            - run:
-                  name: Run linter
-                  command: yarn lint
-            - run:
-                  name: Run unit lint-and-test
-                  command: yarn test
+                  paths: .    
     build-deploy-development:
         executor: node-executor
         environment:
