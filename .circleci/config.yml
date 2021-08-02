@@ -94,8 +94,7 @@ jobs:
 workflows:
     version: 2
     continuous-delivery-development:
-        jobs:
-            - install-dependencies            
+        jobs:                   
             - assume-role-development:
                   context: api-assume-role-housing-development-context
             - build-deploy-development:
