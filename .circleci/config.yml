@@ -14,10 +14,7 @@ references:
 executors:
     node-executor:
         docker:
-            - image: circleci/node:14.15.4-browsers
-    docker-terraform:
-        docker:
-            - image: "hashicorp/terraform:light"
+            - image: circleci/python:3.9.6
 
 commands:
     assume-role-and-persist-workspace:
@@ -35,54 +32,7 @@ commands:
                   root: *workspace_root
                   paths:
                       - .aws
-
-    terraform-init-then-apply:
-        description: "Initialize and apply the terraform configuration"
-        parameters:
-            environment:
-                type: string
-        steps:
-            - *attach_workspace
-            - checkout
-            - run:
-                  name: get and init
-                  command: |
-                      cd ./terraform/<<parameters.environment>>/
-                      terraform get -update=true
-                      terraform init
-            - run:
-                  name: apply
-                  command: |
-                      cd ./terraform/<<parameters.environment>>/
-                      terraform apply -auto-approve
-jobs:
-    install-dependencies:
-        executor: node-executor
-        steps:
-            - *attach_workspace
-            - checkout
-            - restore_cache:
-                  key: dependency-cache-{{ checksum "yarn.lock" }}
-            - run:
-                  name: Install dependencies
-                  command: yarn
-            - save_cache:
-                  key: dependency-cache-{{ checksum "yarn.lock" }}
-                  paths:
-                      - ./node_modules
-            - persist_to_workspace:
-                  root: *workspace_root
-                  paths: .
-    lint-and-test:
-        executor: node-executor
-        steps:
-            - *attach_workspace
-            - run:
-                  name: Run linter
-                  command: yarn lint
-            - run:
-                  name: Run unit lint-and-test
-                  command: yarn test
+jobs: 
     build-deploy-development:
         executor: node-executor
         environment:
@@ -92,10 +42,11 @@ jobs:
                 type: string
         steps:
             - *attach_workspace
+            - checkout            
             - aws-cli/install            
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp development s3://configuration-api-configurations-development/
+                  command: aws s3 sync development s3://configuration-api-configurations-development/
     build-deploy-staging:
         executor: node-executor
         environment:
@@ -105,10 +56,11 @@ jobs:
                 type: string
         steps:
             - *attach_workspace
+            - checkout
             - aws-cli/install
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp staging s3://configuration-api-configurations-staging/
+                  command: aws s3 sync staging s3://configuration-api-configurations-staging/
     build-deploy-production:
         executor: node-executor
         environment:
@@ -118,10 +70,11 @@ jobs:
                 type: string
         steps:
             - *attach_workspace
+            - checkout
             - aws-cli/install
             - run:
                   name: Deploy to S3
-                  command: aws s3 cp production s3://configuration-api-configurations-production/
+                  command: aws s3 sync production s3://configuration-api-configurations-production/
 
     assume-role-development:
         executor: node-executor
@@ -140,97 +93,54 @@ jobs:
         steps:
             - assume-role-and-persist-workspace:
                   aws-account: $AWS_ACCOUNT_PRODUCTION
-
-    terraform-init-and-apply-to-development:
-        executor: docker-terraform
-        steps:
-            - terraform-init-then-apply:
-                  environment: "development"
-
-    terraform-init-and-apply-to-staging:
-        executor: docker-terraform
-        steps:
-            - terraform-init-then-apply:
-                  environment: "staging"
-
-    terraform-init-and-apply-to-production:
-        executor: docker-terraform
-        steps:
-            - terraform-init-then-apply:
-                  environment: "production"
 workflows:
     version: 2
-    continuous-delivery-development:
-        jobs:
-            - install-dependencies
-            - lint-and-test:
-                  requires:
-                      - install-dependencies
+    continuous-delivery:
+        jobs:                   
             - assume-role-development:
                   context: api-assume-role-housing-development-context
-                  requires:
-                      - lint-and-test
                   filters:
-                      branches:
-                          only: main
-            - terraform-init-and-apply-to-development:
-                  requires:
-                      - assume-role-development
-                  filters:
-                      branches:
-                          only: main
+                    branches:
+                      only: master
             - build-deploy-development:
                   stage: "development"
                   requires:
-                      - terraform-init-and-apply-to-development
+                    - assume-role-development
                   filters:
-                      branches:
-                          only: main
+                    branches:
+                      only: master                    
             - assume-role-staging:
                   context: api-assume-role-housing-staging-context
                   requires:
                       - build-deploy-development
                   filters:
-                      branches:
-                          only: main
-            - terraform-init-and-apply-to-staging:
-                  requires:
-                      - assume-role-staging
-                  filters:
-                      branches:
-                          only: main
+                    branches:
+                      only: master                      
             - build-deploy-staging:
                   stage: "staging"
                   requires:
-                      - terraform-init-and-apply-to-staging
+                    - assume-role-staging
                   filters:
-                      branches:
-                          only: main
-            - permit-production-terraform-release:
-                  type: approval
-                  requires:
-                      - build-deploy-staging
+                    branches:
+                      only: master                    
             - assume-role-production:
                   context: api-assume-role-housing-production-context
                   requires:
-                      - permit-production-terraform-release
+                    - build-deploy-staging
                   filters:
-                      branches:
-                          only: main
-            - terraform-init-and-apply-to-production:
-                  requires:
-                      - assume-role-production
-                  filters:
-                      branches:
-                          only: main
+                    branches:
+                      only: master                    
             - permit-deploy-production:
                   type: approval
                   requires:
-                      - terraform-init-and-apply-to-production
+                    - assume-role-production 
+                  filters:
+                    branches:
+                      only: master                    
             - build-deploy-production:
                   stage: "production"
                   requires:
                       - permit-deploy-production
                   filters:
-                      branches:
-                          only: main
+                    branches:
+                      only: master                      
