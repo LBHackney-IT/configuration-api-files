@@ -1,0 +1,7 @@
+{
+  "Type": "MMH",
+  "Configuration": {},
+  "FeatureToggles": {
+    "SearchTenure": false
+  }
+}
