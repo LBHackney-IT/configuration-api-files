@@ -129,18 +129,11 @@ workflows:
                     - build-deploy-staging
                   filters:
                     branches:
-                      only: master                    
-            - permit-deploy-production:
-                  type: approval
-                  requires:
-                    - assume-role-production 
-                  filters:
-                    branches:
-                      only: master                    
+                      only: master                                     
             - build-deploy-production:
                   stage: "production"
                   requires:
-                      - permit-deploy-production
+                      - assume-role-production
                   filters:
                     branches:
                       only: master                      
