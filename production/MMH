@@ -2,7 +2,7 @@
   "Type": "MMH",
   "Configuration": {},
   "FeatureToggles": {
-    "SearchAsset": false,
+    "SearchAsset": true,
     "CreateTenure": false
   }
 }
