@@ -4,6 +4,6 @@
   "FeatureToggles": {
     "TenureActivityHistory": false,
     "RefactorComments": false,
-    "CreateTenure": false
+    "CreateTenure": true
   }
 }
