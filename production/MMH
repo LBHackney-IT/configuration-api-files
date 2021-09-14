@@ -3,7 +3,7 @@
   "Configuration": {},
   "FeatureToggles": {
     "TenureActivityHistory": false,
-    "RefactorComments": false,
+    "RefactorComments": true,
     "CreateTenure": false
   }
 }
