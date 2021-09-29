@@ -2,8 +2,6 @@
   "Type": "MMH",
   "Configuration": {},
   "FeatureToggles": {
-    "TenureActivityHistory": true,
-    "RefactorComments": true,
     "CreateTenure": false,
     "EditTenure": true
   }
