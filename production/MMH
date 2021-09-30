@@ -5,6 +5,7 @@
     "TenureActivityHistory": true,
     "RefactorComments": true,
     "CreateTenure": false,
-    "EditTenure": true
+    "EditTenure": true,
+    "EnhancedComments": false
   }
 }
