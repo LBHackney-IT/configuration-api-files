@@ -6,6 +6,7 @@
     "RefactorComments": true,
     "CreateTenure": true,
     "EditTenure": true,
-    "EnhancedComments": true
+    "EnhancedComments": true,
+    "AddPersonToTenureOnEditTenure": true
   }
 }
