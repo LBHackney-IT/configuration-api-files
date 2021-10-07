@@ -8,6 +8,7 @@
     "EditTenure": true,
     "EnhancedComments": true,
     "AddPersonToTenureOnEditTenure": true,
-    "XCorrelationId": true
+    "XCorrelationId": true,
+    "EnhancedPersonComments": true
   }
 }
