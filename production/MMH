@@ -9,6 +9,7 @@
     "EnhancedComments": false,
     "AddPersonToTenureOnEditTenure": false,
     "XCorrelationId": false,
-    "EnhancedPersonComments": false
+    "EnhancedPersonComments": false,
+    "WarningComponents": false
   }
 }
