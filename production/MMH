@@ -6,9 +6,9 @@
     "RefactorComments": true,
     "CreateTenure": false,
     "EditTenure": true,
-    "EnhancedComments": false,
-    "AddPersonToTenureOnEditTenure": false,
-    "XCorrelationId": false,
+    "EnhancedComments": true,
+    "AddPersonToTenureOnEditTenure": true,
+    "XCorrelationId": true,
     "EnhancedPersonComments": false,
     "WarningComponents": false
   }
