@@ -4,7 +4,7 @@
   "FeatureToggles": {
     "TenureActivityHistory": true,
     "RefactorComments": true,
-    "CreateTenure": true,
+    "CreateTenure": false,
     "EditTenure": true,
     "EnhancedComments": true,
     "AddPersonToTenureOnEditTenure": true,
