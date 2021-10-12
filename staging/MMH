@@ -4,6 +4,7 @@
   "FeatureToggles": {
     "CreateTenure": true,
     "EditTenure": true,
+    "EnhancedComments": true,
     "AddPersonToTenureOnEditTenure": true,
     "XCorrelationId": true,
     "EnhancedPersonComments": false,
