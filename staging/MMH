@@ -2,11 +2,8 @@
   "Type": "MMH",
   "Configuration": {},
   "FeatureToggles": {
-    "TenureActivityHistory": true,
-    "RefactorComments": true,
     "CreateTenure": true,
     "EditTenure": true,
-    "EnhancedComments": true,
     "AddPersonToTenureOnEditTenure": true,
     "XCorrelationId": true,
     "EnhancedPersonComments": false,
