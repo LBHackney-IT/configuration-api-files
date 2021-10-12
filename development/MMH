@@ -3,10 +3,6 @@
   "Configuration": {},
   "FeatureToggles": {
     "CreateTenure": true,
-    "EditTenure": true,
-    "EnhancedComments": true,
-    "AddPersonToTenureOnEditTenure": true,
-    "XCorrelationId": true,
     "EnhancedPersonComments": true,
     "WarningComponents": true,
     "Stepper": true
