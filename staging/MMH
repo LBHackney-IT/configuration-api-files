@@ -1,10 +1,13 @@
 {
   "Type": "MMH",
-  "Configuration": {},
+  "Configuration": {
+    "OldTenancyFilesLink": "https://drive.google.com/drive/folders/0AOzUTlgVuXrEUk9PVA"
+  },
   "FeatureToggles": {
     "CreateTenure": true,
     "EnhancedPersonComments": false,
     "WarningComponents": false,
-    "Stepper": true
+    "Stepper": true,
+    "OldTenancyFiles": false
   }
 }
