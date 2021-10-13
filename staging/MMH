@@ -5,6 +5,6 @@
     "CreateTenure": true,
     "EnhancedPersonComments": false,
     "WarningComponents": false,
-    "Stepper": false
+    "Stepper": true
   }
 }
