@@ -5,7 +5,7 @@
   },
   "FeatureToggles": {
     "CreateTenure": true,
-    "EnhancedPersonComments": false,
+    "EnhancedPersonComments": true,
     "WarningComponents": false,
     "Stepper": true,
     "OldTenancyFiles": false
