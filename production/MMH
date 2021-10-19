@@ -8,6 +8,7 @@
     "EnhancedPersonComments": false,
     "WarningComponents": false,
     "Stepper": false,
-    "OldTenancyFiles": false
+    "OldTenancyFiles": false,
+    "CorrespondenceAddress": false
   }
 }
