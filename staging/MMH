@@ -6,9 +6,9 @@
   "FeatureToggles": {
     "CreateTenure": true,
     "EnhancedPersonComments": true,
-    "WarningComponents": false,
+    "WarningComponents": true,
     "Stepper": true,
-    "OldTenancyFiles": false,
-    "CorrespondenceAddress": false
+    "OldTenancyFiles": true,
+    "CorrespondenceAddress": true
   }
 }
