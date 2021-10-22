@@ -9,6 +9,7 @@
     "WarningComponents": false,
     "Stepper": false,
     "OldTenancyFiles": false,
-    "CorrespondenceAddress": false
+    "CorrespondenceAddress": false,
+    "EqualityDetails": false
   }
 }
