@@ -5,10 +5,10 @@
   },
   "FeatureToggles": {
     "CreateTenure": false,
-    "EnhancedPersonComments": false,
-    "WarningComponents": false,
-    "Stepper": false,
-    "OldTenancyFiles": false,
+    "EnhancedPersonComments": true,
+    "WarningComponents": true,
+    "Stepper": true,
+    "OldTenancyFiles": true,
     "CorrespondenceAddress": false,
     "EqualityDetails": false
   }
