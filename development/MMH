@@ -5,10 +5,6 @@
   },
   "FeatureToggles": {
     "CreateTenure": true,
-    "EnhancedPersonComments": true,
-    "WarningComponents": true,
-    "Stepper": true,
-    "OldTenancyFiles": true,
     "CorrespondenceAddress": true,
     "EqualityDetails": true
   }
