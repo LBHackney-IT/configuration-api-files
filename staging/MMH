@@ -6,6 +6,7 @@
   "FeatureToggles": {
     "CreateTenure": true,
     "CorrespondenceAddress": true,
-    "EqualityDetails": false
+    "EqualityDetails": false,
+    "EnhancedPropertyComments": false
   }
 }
