@@ -8,6 +8,7 @@
     "CorrespondenceAddress": true,
     "CorrespondenceAddressLookup": true,
     "EqualityDetails": true,
-    "EnhancedPropertyComments": true
+    "EnhancedPropertyComments": true,
+    "ProcessMenuButton": true
   }
 }
