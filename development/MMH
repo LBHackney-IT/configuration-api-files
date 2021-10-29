@@ -6,7 +6,7 @@
   "FeatureToggles": {
     "CreateTenure": true,
     "CorrespondenceAddress": true,
-    "CorrespondenceAddressLookup": true,
+    "CorrespondenceAddressLookup": false,
     "EqualityDetails": true,
     "EnhancedPropertyComments": true,
     "ProcessMenuButton": true
