@@ -9,6 +9,6 @@
     "CorrespondenceAddressLookup": false,
     "EqualityDetails": false,
     "EnhancedPropertyComments": false,
-    "ProcessMenuButton": false
+    "ProcessMenuButton": true
   }
 }
