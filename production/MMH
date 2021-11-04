@@ -5,11 +5,11 @@
   },
   "FeatureToggles": {
     "CreateTenure": true,
-    "CorrespondenceAddress": false,
-    "CorrespondenceAddressLookup": false,
+    "CorrespondenceAddress": true,
+    "CorrespondenceAddressLookup": true,
     "EqualityDetails": false,
-    "EnhancedPropertyComments": false,
-    "ProcessMenuButton": false,
+    "EnhancedPropertyComments": true,
+    "ProcessMenuButton": true,
     "RepairsList": false
   }
 }
