@@ -8,8 +8,6 @@
     "CorrespondenceAddress": true,
     "CorrespondenceAddressLookup": true,
     "EqualityDetails": false,
-    "EnhancedPropertyComments": true,
-    "ProcessMenuButton": true,
     "RepairsList": false
   }
 }
