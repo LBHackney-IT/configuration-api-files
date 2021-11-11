@@ -4,9 +4,6 @@
     "OldTenancyFilesLink": "https://drive.google.com/drive/folders/0AOzUTlgVuXrEUk9PVA"
   },
   "FeatureToggles": {
-    "CreateTenure": true,
-    "CorrespondenceAddress": true,
-    "CorrespondenceAddressLookup": true,
     "EqualityDetails": false,
     "EnhancedPropertyComments": true,
     "ProcessMenuButton": true,
