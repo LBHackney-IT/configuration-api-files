@@ -5,6 +5,7 @@
   },
   "FeatureToggles": {
     "EqualityDetails": true,
-    "RepairsList": true
+    "RepairsList": true,
+    "PersonSearchCardEnhancement": true
   }
 }
