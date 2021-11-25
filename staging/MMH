@@ -6,6 +6,7 @@
   "FeatureToggles": {
     "EqualityDetails": true,
     "RepairsList": true,
-    "PersonSearchCardEnhancement": true
+    "PersonSearchCardEnhancement": true,
+    "EnhancedProcessMenu": false
   }
 }
