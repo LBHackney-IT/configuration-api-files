@@ -7,6 +7,6 @@
     "EqualityDetails": true,
     "RepairsList": true,
     "PersonSearchCardEnhancement": true,
-    "EnhancedProcessMenu": false
+    "EnhancedProcessMenu": true
   }
 }
