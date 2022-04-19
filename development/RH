@@ -1,11 +1,6 @@
 {
   "Type": "RH",
   "FeatureToggles": {
-    "WorkOrderPrinting": true,
-    "OperativeSplitting": true,
-    "OperativeManagementMobile": true,
-    "UpdatingMultiTrades": true,
-    "LegalDisrepairDisplay": true,
-    "BudgetCodeSelection": true
+    "MultiTradeSORIncrementalSearch": true
   }
 }
