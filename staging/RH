@@ -1,6 +1,6 @@
 {
   "Type": "RH",
   "FeatureToggles": {
-    "MultiTradeSORIncrementalSearch": false
+    "MultiTradeSORIncrementalSearch": true
   }
 }
