@@ -7,6 +7,7 @@
     "EqualityDetails": true,
     "RepairsList": true,
     "PersonSearchCardEnhancement": true,
-    "EnhancedProcessMenu": false
+    "EnhancedProcessMenu": false,
+    "EnabledMenuProcesses": ["soletojoint"]
   }
 }
