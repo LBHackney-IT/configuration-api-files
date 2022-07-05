@@ -8,6 +8,6 @@
     "RepairsList": true,
     "PersonSearchCardEnhancement": true,
     "EnhancedProcessMenu": false,
-    "EnabledMenuProcesses": ["soletojoint"]
+    "EnableChangeOfName": false
   }
 }
