@@ -8,6 +8,7 @@
     "RepairsList": true,
     "PersonSearchCardEnhancement": true,
     "EnhancedProcessMenu": true,
-    "EnableChangeOfName": true
+    "EnableChangeOfName": true,
+    "ReassignCase": true
   }
 }
