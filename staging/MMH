@@ -9,6 +9,7 @@
     "PersonSearchCardEnhancement": true,
     "EnhancedProcessMenu": true,
     "EnableChangeOfName": true,
-    "ReassignCase": true
+    "ReassignCase": true,
+    "Worktray": true
   }
 }
