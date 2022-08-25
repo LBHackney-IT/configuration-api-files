@@ -8,7 +8,7 @@
     "RepairsList": true,
     "PersonSearchCardEnhancement": true,
     "EnhancedProcessMenu": true,
-    "EnableChangeOfName": false,
+    "EnableChangeOfName": true,
     "ReassignCase": false,
     "Worktray": false
   }
